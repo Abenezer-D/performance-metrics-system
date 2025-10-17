@@ -1,0 +1,9 @@
+Array
+(
+    [id] => 2
+    [username] => abeni
+    [email] => aa@gmail.com
+    [role] => user
+    [position] => Teller
+    [branch] => Addis Ababa
+)

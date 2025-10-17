@@ -1,0 +1,16 @@
+[06-Oct-2025 11:49:53 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in C:\Users\Abenezer\Downloads\xampp\htdocs\role_based_auth_php\add_kpi_ajax.php:57
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Abenezer\Downloads\xampp\htdocs\role_based_auth_php\add_kpi_ajax.php on line 57
+[06-Oct-2025 11:50:16 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in C:\Users\Abenezer\Downloads\xampp\htdocs\role_based_auth_php\add_kpi_ajax.php:57
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Abenezer\Downloads\xampp\htdocs\role_based_auth_php\add_kpi_ajax.php on line 57
+[06-Oct-2025 12:04:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in C:\Users\Abenezer\Downloads\xampp\htdocs\role_based_auth_php\add_kpi_ajax.php:49
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Abenezer\Downloads\xampp\htdocs\role_based_auth_php\add_kpi_ajax.php on line 49
+[06-Oct-2025 12:05:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in C:\Users\Abenezer\Downloads\xampp\htdocs\role_based_auth_php\add_kpi_ajax.php:49
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Abenezer\Downloads\xampp\htdocs\role_based_auth_php\add_kpi_ajax.php on line 49

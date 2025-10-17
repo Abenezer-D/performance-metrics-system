@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test KPI Submission</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .form-group { margin: 10px 0; }
+        label { display: inline-block; width: 80px; }
+        input { padding: 5px; margin: 5px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        #result { margin-top: 20px; padding: 15px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+    </style>
+</head>
+<body>
+    <h2>Test KPI Submission</h2>
+    
+    <form id="kpiForm">
+    <input type="number" name="kpi[1]" value="100" required>
+    <input type="number" name="kpi[2]" value="200" required>
+    <input type="number" name="kpi[4]" value="400" required>
+    <input type="number" name="kpi[5]" value="500" required>
+    <input type="number" name="kpi[6]" value="600" required>
+    <button type="submit">Test Submit</button>
+</form>
+    
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('kpiForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>Submitting...</p>';
+            
+            try {
+                const formData = new FormData(this);
+                
+                // Test the exact URL path
+                const response = await fetch('submit_performance.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Display result
+                resultDiv.className = data.status;
+                resultDiv.innerHTML = `
+                    <h3>${data.status.toUpperCase()}</h3>
+                    <p>${data.message}</p>
+                    ${data.debug ? '<details><summary>Debug Info</summary><pre>' + data.debug + '</pre></details>' : ''}
+                `;
+                
+            } catch (error) {
+                resultDiv.className = 'error';
+                resultDiv.innerHTML = `
+                    <h3>FETCH ERROR</h3>
+                    <p>${error.message}</p>
+                    <p>Make sure:</p>
+                    <ul>
+                        <li>Both files are in the same folder</li>
+                        <li>You're accessing via http://localhost/ or your domain</li>
+                        <li>The PHP file name is correct: submit_performance.php</li>
+                    </ul>
+                `;
+                console.error('Fetch error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

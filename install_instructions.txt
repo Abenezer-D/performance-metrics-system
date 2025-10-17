@@ -1,0 +1,9 @@
+How to install and run (local):
+1. Install a local server stack (XAMPP, WAMP, MAMP, or LAMP).
+2. Place the 'role_based_auth_php' folder inside your webserver's document root (e.g., C:/xampp/htdocs/ or /var/www/html/).
+3. Edit db.php and set $DB_USER, $DB_PASS to your MySQL credentials.
+4. Open your browser and run: http://localhost/role_based_auth_php/install.php
+   - This will create the database (if permissions allow), create the users table and insert a default admin:
+     admin@example.com / Admin@123
+5. After install finishes, delete install.php for security.
+6. Go to: http://localhost/role_based_auth_php/login.php
